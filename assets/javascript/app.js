@@ -123,10 +123,10 @@ var unanswered = 9;
 	})
 $('#submit').on('click', function () {
 	displayResults();
-	$('#submit').hide();
 });
 
 function displayResults() {
+	$('#submit').hide();
 if ($("input[name='optiona0']:checked").val()) {
 	correctAnswers++;
 };
