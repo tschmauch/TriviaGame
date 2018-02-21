@@ -1,0 +1,56 @@
+html {
+	overflow: auto;
+	font-family: 'Bellefair', serif;
+}
+
+body {
+	background-image: url("./../images/reelbackground.jpg");
+	color: white;
+	overflow: auto;
+	font-family: 'Bellefair', serif;
+}
+.navbar-header {
+	float:none;
+	margin:0 auto;
+	display: block;
+	text-align: center;
+	height: 100%;
+	background-color: #444;
+}
+
+.navbar {
+	height: 8%;
+	clear: both;
+	background-color: #444;
+	width: 100%;
+}
+
+.container-fluid {
+	heigth: 100%;
+}
+.col-md-4 {
+	float:none;
+	margin:0 auto;
+	display: block;
+	text-align: center;
+	color: #ccc;
+	background-color: #111;
+	height: 100%;
+	font-size: 4rem;
+	border-radius: 5px 17px;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+	text-align:center;
+}
+
+#questionArea {
+	background-color: slategrey;
+	border-radius: 5px 17px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	opacity: .7;
+}
