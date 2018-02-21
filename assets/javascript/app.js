@@ -8,6 +8,9 @@
 // Don't forget to include a countdown timer.
 
 $(document).ready(function () {
+var correctAnswers = 0;
+var incorrectAnswers = 0;
+var unanswered = 9;
 
 	// Questions
 	var myQuestions = [
@@ -113,16 +116,104 @@ $(document).ready(function () {
 
 	// Populate questions
 		for (var i = 0; i < myQuestions.length; i++) {
-			$('#questionArea').append(myQuestions[i].question + '<br>' + '<form name="question">' + '<input type="radio" name="option"/>' + myQuestions[i].answers.a + '<br/>' + '<input type="radio" name="option"/>' + myQuestions[i].answers.b + '<br/>' + '<input type="radio" name="option" />' + myQuestions[i].answers.c + '<br/>' + '</form>' + '<br>');
+			$('#questionArea').append(myQuestions[i].question + '<br>' + '<form name="question">' + '<input type="radio" name="optiona' + i + '"/>' + myQuestions[i].answers.a + '<br/>' + '<input type="radio" name="optionb' + i + '"/>' + myQuestions[i].answers.b + '<br/>' + '<input type="radio" name="optionc' + i + '" />' + myQuestions[i].answers.c + '<br/>' + '</form>' + '<br>');
 		}
 
 
 	})
-$('#submit').on('click', displayResults);
-
+$('#submit').on('click', function () {
+	displayResults();
+	$('#submit').hide();
+});
 
 function displayResults() {
-	console.log('Timesup');
-	console.log($('input[name=option]:checked').val());
+if ($("input[name='optiona0']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc1']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc2']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optiona3']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc4']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionb5']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc6']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc7']:checked").val()) {
+	correctAnswers++;
+};
+if ($("input[name='optionc8']:checked").val()) {
+	correctAnswers++;
+};
+///////////////////
+if ($("input[name='optionb0']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb1']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb2']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb3']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb4']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona5']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb6']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb7']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionb8']:checked").val()) {
+	incorrectAnswers++;
+};
+/////////////////////
+if ($("input[name='optionc0']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona1']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona2']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionc3']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona4']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optionc5']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona6']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona7']:checked").val()) {
+	incorrectAnswers++;
+};
+if ($("input[name='optiona8']:checked").val()) {
+	incorrectAnswers++;
+};
+unanswered = unanswered - correctAnswers - incorrectAnswers;
+console.log('correct: ' + correctAnswers);
+console.log('incorrect: ' + incorrectAnswers);
+console.log('unanswered: ' + unanswered);
+$('#questionArea').html('<h3>Correct: ' + correctAnswers + '</h3><br>' + '<h3>Incorrect: ' + incorrectAnswers + '</h3><br>' + '<h3>Unanswered: ' + unanswered + '</h3><br>');
 }
 })
