@@ -4,7 +4,9 @@ html {
 }
 
 body {
-	background-image: url("./../images/reelbackground.jpg");
+	background-image: url("./../images/everestbg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	color: white;
 	overflow: auto;
 	font-family: 'Bellefair', serif;
@@ -52,5 +54,11 @@ body {
 	text-align: center;
 	padding-left: 10px;
 	padding-right: 10px;
-	opacity: .7;
+	opacity: .9;
+	margin-bottom: 50px;
+	font-size: 3rem;
+}
+#submit {
+	display: none;
+	margin-bottom: 20px;
 }
