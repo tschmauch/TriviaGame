@@ -99,6 +99,7 @@ var unanswered = 9;
 	// Start button
 	$('#start').on('click', function () {
 		$('#start').hide();
+		$('#questionArea').show();
 		$('#submit').show();
 		// Timer
 		var timeLeft = 30;

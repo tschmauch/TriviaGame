@@ -57,6 +57,7 @@ body {
 	opacity: .9;
 	margin-bottom: 50px;
 	font-size: 3rem;
+	display: none;
 }
 #submit {
 	display: none;
