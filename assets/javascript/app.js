@@ -97,15 +97,16 @@ var unanswered = 9;
 		}
 	];
 	// Start button
-	$('#start').on('click', function () {
+	$(document).on('click', '#start', function () {
 		$('#start').hide();
 		$('#questionArea').show();
 		$('#submit').show();
 		// Timer
+		clearInterval(timerId);
 		var timeLeft = 30;
 		var timerId = setInterval(countdown, 1000);
 		function countdown() {
-			if (timeLeft == 0) {
+			if (timeLeft === 0) {
 				clearTimeout(timerId);
 				displayResults();
 			} else {
@@ -122,12 +123,13 @@ var unanswered = 9;
 
 
 	})
-$('#submit').on('click', function () {
+$(document).on('click', '#submit', function () {
 	displayResults();
 });
 
 function displayResults() {
 	$('#submit').hide();
+	$('#reset').show();
 if ($("input[name='optiona0']:checked").val()) {
 	correctAnswers++;
 };
@@ -217,4 +219,15 @@ console.log('incorrect: ' + incorrectAnswers);
 console.log('unanswered: ' + unanswered);
 $('#questionArea').html('<h3>Correct: ' + correctAnswers + '</h3><br>' + '<h3>Incorrect: ' + incorrectAnswers + '</h3><br>' + '<h3>Unanswered: ' + unanswered + '</h3><br>');
 }
+// RESET
+$(document).on('click', '#reset', function(){
+	var correctAnswers = 0;
+	var incorrectAnswers = 0;
+	var unanswered = 9;
+	$('body').html('<nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><div class="col-md-4">Trivia Time!</div></div></div></nav><br><br><br><div class="container"><div class="row"><div class="col-md-8 col-centered"><h1>General Trivia - Test Your Knowledge</h1><br><button type="button" class="btn btn-success btn-lg" id="start">Start</button><br><br><div class="row"><div class="col-md-12" id="questionArea"><span id="timer"></span><br><br></div><button type="button" class="btn btn-success btn-lg" id="submit">Submit</button><button type="button" class="btn btn-success btn-lg" id="reset">Reset</button></div></div></div></div></div>');
+	$('#start').show();
+	$('#questionArea').hide();
+	$('#submit').hide();
+	$('#reset').hide();
+})
 })

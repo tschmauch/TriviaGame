@@ -59,7 +59,7 @@ body {
 	font-size: 3rem;
 	display: none;
 }
-#submit {
+#submit, #reset {
 	display: none;
 	margin-bottom: 20px;
 }
