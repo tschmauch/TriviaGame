@@ -101,6 +101,7 @@ var timerId;
 	// Start button
 	$(document).on('click', '#start', function () {
 		$('#start').hide();
+		$('#timerDiv').show();
 		$('#questionArea').show();
 		$('#submit').show();
 		// Timer
@@ -131,6 +132,9 @@ $(document).on('click', '#submit', function () {
 });
 
 function displayResults() {
+	clearTimeout(timerId);
+	clearInterval(timerId);
+	$('#timerDiv').hide();
 	$('#submit').hide();
 	$('#reset').show();
 if ($("input[name='optiona0']:checked").val()) {
@@ -227,7 +231,7 @@ $(document).on('click', '#reset', function(){
 	correctAnswers = 0;
 	incorrectAnswers = 0;
 	unanswered = 9;
-	$('body').html('<nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><div class="col-md-4">Trivia Time!</div></div></div></nav><br><br><br><div class="container"><div class="row"><div class="col-md-8 col-centered"><h1>General Trivia - Test Your Knowledge</h1><br><button type="button" class="btn btn-success btn-lg" id="start">Start</button><br><br><div class="row"><div class="col-md-12" id="questionArea"><span id="timer"></span><br><br></div><button type="button" class="btn btn-success btn-lg" id="submit">Submit</button><button type="button" class="btn btn-success btn-lg" id="reset">Reset</button></div></div></div></div></div>');
+	$('body').html('<nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><div class="col-md-4">Trivia Time!</div></div></div></nav><br><br><br><div class="container"><div class="row"><div class="col-md-8 col-centered"><h1>General Trivia - Test Your Knowledge</h1><br><button type="button" class="btn btn-success btn-lg" id="start">Start</button><br><br><div class="row"><div class="col-md-2" id="timerDiv"><span id="timer"></span></div><div class="col-md-9" id="questionArea"></div></div><button type="button" class="btn btn-success btn-lg" id="submit">Submit</button><button type="button" class="btn btn-success btn-lg" id="reset">Reset</button></div></div></div></div>');
 	$('#start').show();
 	$('#questionArea').hide();
 	$('#submit').hide();

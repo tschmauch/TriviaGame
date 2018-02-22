@@ -8,9 +8,10 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	color: white;
-	overflow: auto;
+	overflow: visible;
 	font-family: 'Bellefair', serif;
 }
+
 .navbar-header {
 	float:none;
 	margin:0 auto;
@@ -62,4 +63,21 @@ body {
 #submit, #reset {
 	display: none;
 	margin-bottom: 20px;
+	position: absolute;
+}
+#timerDiv {
+	display: none;
+	background-color: slategrey;
+	border-radius: 5px 17px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	opacity: .9;
+	margin-bottom: 50px;
+	font-size: 3rem;
+	margin-right: 20px;
+	position: fixed;
+	right: 5%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
